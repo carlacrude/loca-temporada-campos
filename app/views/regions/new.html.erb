@@ -1,8 +1,8 @@
 <h1>Nova região</h1>
 
 <ul>
-<%= @region.errors.full_messages do |message| %>
-  <li>message</li>
+<% @region.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
 <% end %>
 </ul>
 

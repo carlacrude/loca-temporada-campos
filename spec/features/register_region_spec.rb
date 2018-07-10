@@ -2,7 +2,8 @@ require 'rails_helper'
 
 feature 'Register Region' do
   scenario 'successfully' do
-    visit new_region_path
+    visit root_path
+    click_on 'Cadastrar região'
     fill_in 'Nome', with: 'Copacabana'
     click_on 'Cadastrar'
 
@@ -11,7 +12,8 @@ feature 'Register Region' do
   end
 
   scenario 'and leave blank fields' do
-    visit new_region_path
+    visit root_path
+    click_on 'Cadastrar região'
     click_on 'Cadastrar'
 
     expect(page).to have_content('Você deve preencher todos os campos')

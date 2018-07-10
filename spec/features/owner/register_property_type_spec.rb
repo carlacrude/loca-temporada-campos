@@ -2,7 +2,8 @@ require 'rails_helper'
 
 feature 'Register Property Type' do
   scenario 'successfully' do
-    visit new_property_type_path
+    visit root_path
+    click_on 'Cadastrar tipo de imóvel'
     fill_in 'Nome', with: 'Apartamento'
     click_on 'Cadastrar'
 
@@ -11,7 +12,8 @@ feature 'Register Property Type' do
   end
 
   scenario 'and leave blank fields' do
-    visit new_property_type_path
+    visit root_path
+    click_on 'Cadastrar tipo de imóvel'
     click_on 'Cadastrar'
 
     expect(page).to have_content('Você deve preencher todos os campos')

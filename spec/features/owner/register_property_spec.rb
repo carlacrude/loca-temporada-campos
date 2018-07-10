@@ -6,6 +6,7 @@ feature 'Register Property' do
     property_type = PropertyType.create(name: 'Apartamento')
 
     visit root_path
+    click_on 'Cadastrar imóvel'
     fill_in 'Título', with: 'Lindo apartamento 100m da praia'
     fill_in 'Descrição', with: 'Um apartamento excelente para férias'
     select 'Apartamento', from: 'Tipo do imóvel'
@@ -44,6 +45,7 @@ feature 'Register Property' do
     PropertyType.create(name: 'Apartamento')
 
     visit root_path
+    click_on 'Cadastrar imóvel'
     click_on 'Cadastrar'
 
     expect(page).to have_content('Você deve preencher todos os campos')

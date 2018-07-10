@@ -10,9 +10,12 @@
   </head>
 
   <body>
-    <p><%= flash[:success] %></p>
-    <p><%= flash[:notice] %></p>
-    <p><%= flash[:alert] %></p>
-    <%= yield %>
+    <%= render partial: 'shared/nav_bar' %>
+    <div class="container">
+      <p><%= flash[:success] %></p>
+      <p><%= flash[:notice] %></p>
+      <p><%= flash[:alert] %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>
