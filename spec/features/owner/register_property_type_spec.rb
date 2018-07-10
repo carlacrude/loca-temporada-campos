@@ -3,9 +3,10 @@ require 'rails_helper'
 feature 'Register Property Type' do
   scenario 'successfully' do
     visit new_property_type_path
-    fill_in 'Name', with: 'Apartamento'
+    fill_in 'Nome', with: 'Apartamento'
     click_on 'Cadastrar'
 
+    expect(page).to have_css('p', text: 'Tipo do imóvel cadastrado com sucesso')
     expect(page).to have_css('h1', text: 'Apartamento')
   end
 
