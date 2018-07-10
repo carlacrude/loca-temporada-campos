@@ -1,0 +1,39 @@
+<h1>Novo imóvel</h1>
+
+<ul>
+<%= @property.errors.full_messages do |message| %>
+  <li>message</li>
+<% end %>
+</ul>
+
+<%= form_for @property do |f| %>
+  <%= f.label :title, 'Título' %>
+  <%= f.text_field :title %>
+  <%= f.label :description, 'Descrição' %>
+  <%= f.text_field :description %>
+  <%= f.label :property_type_id, 'Tipo do imóvel' %>
+  <%= f.collection_select(:property_type_id, @property_types, :id, :name) %>
+  <%= f.label :region_id, 'Região' %>
+  <%= f.collection_select(:region_id, @regions, :id, :name) %>
+  <%= f.label :rent_purpose, 'Finalidade do imóvel' %>
+  <%= f.text_field :rent_purpose %>
+  <%= f.label :area, 'Área' %>
+  <%= f.number_field :area %>
+  <%= f.label :room_quantity, 'Quantidade de cômodos' %>
+  <%= f.number_field :room_quantity %>
+  <%= f.label :accessibility, 'Possui acessibilidade' %>
+  <%= f.check_box :accessibility %>
+  <%= f.label :allow_pets, 'Aceita animais' %>
+  <%= f.check_box :allow_pets %>
+  <%= f.label :allow_smokers, 'Aceita fumantes' %>
+  <%= f.check_box :allow_smokers %>
+  <%= f.label :maximum_guests, 'Ocupação máxima' %>
+  <%= f.number_field :maximum_guests %>
+  <%= f.label :minimum_rent, 'Mínimo de diárias' %>
+  <%= f.number_field :minimum_rent %>
+  <%= f.label :maximum_rent, 'Máximo de diárias' %>
+  <%= f.number_field :maximum_rent %>
+  <%= f.label :daily_rate, 'Valor da diária' %>
+  <%= f.number_field :daily_rate, step: 0.01 %>
+  <%= f.submit 'Cadastrar' %>
+<% end %>

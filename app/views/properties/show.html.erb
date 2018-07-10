@@ -1,0 +1,17 @@
+<h1><%= @property.title %></h1>
+<p><%= @property.description %></p>
+<h3>Descrição do imóvel</h3>
+<ul>
+  <li>Região: <%= @property.region.name %></li>
+  <li>Tipo do imóvel: <%= @property.property_type.name %></li>
+  <li>Finalidade do imóvel: <%= @property.rent_purpose %></li>
+  <li>Área: <%= @property.area %>m²</li>
+  <li>Quantidade de cômodos: <%= @property.room_quantity %></li>
+  <li>Possui acessibilidade: <%= @property.accessibility? ? 'Sim' : 'Não' %></li>
+  <li>Aceita animais: <%= @property.allow_pets? ? 'Sim' : 'Não' %></li>
+  <li>Aceita fumantes: <%= @property.allow_smokers? ? 'Sim' : 'Não' %></li>
+  <li>Ocupação máxima: <%= @property.maximum_guests %></li>
+  <li>Mínimo de diárias: <%= @property.minimum_rent %></li>
+  <li>Máximo de diárias: <%= @property.maximum_rent %></li>
+  <li>Valor da diária: R$ <%= @property.daily_rate %></li>
+</ul>
