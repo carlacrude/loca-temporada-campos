@@ -6,7 +6,7 @@
   <% end %>
 </ul>
 
-<%= form_for @property do |f| %>
+<%= form_for(@property, html: { multipart: true } )  do |f| %>
   <div class="form-group">
     <%= f.label :title, 'Título' %>
     <%= f.text_field :title, class: 'form-control' %>
@@ -62,6 +62,10 @@
   <div class="form-group">
     <%= f.label :daily_rate, 'Valor da diária' %>
     <%= f.number_field :daily_rate, step: 0.01, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :photo, 'Foto' %>
+    <%= f.file_field :photo, class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.submit 'Cadastrar', class: 'btn btn-primary' %>

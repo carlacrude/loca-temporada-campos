@@ -1,6 +1,8 @@
 <h1><%= @property.title %></h1>
 <p><%= @property.description %></p>
+
 <h3>Descrição do imóvel</h3>
+
 <ul>
   <li>Região: <%= @property.region.name %></li>
   <li>Tipo do imóvel: <%= @property.property_type.name %></li>
@@ -15,3 +17,5 @@
   <li>Máximo de diárias: <%= @property.maximum_rent %></li>
   <li>Valor da diária: R$ <%= @property.daily_rate %></li>
 </ul>
+
+<%= image_tag @property.photo.url %>
