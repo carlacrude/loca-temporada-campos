@@ -3,6 +3,9 @@ class RegionsController < ApplicationController
 
   def show
     @region = Region.find(params[:id])
+      if @region.property.empty?
+        flash[:notice] = "Nenhum imóvel cadastrado"
+      end
   end
 
   def new
