@@ -1,1 +1,4 @@
-<%= @property.description %>
+
+<% @proposals.each do |p| %>
+    <h1> <%= p.property.title %> </h1>
+<% end %>

@@ -2,10 +2,8 @@ require 'rails_helper'
 
 feature 'show proposals' do 
     scenario 'successfully' do
-
         region = Region.create(name: 'Copacabana')
         property_type = PropertyType.create(name: 'Apartamento')
-
         property = Property.create(title:'Apartamento para aluguel temporada', 
                                     description: 'Lindo apartamento com vista para praia e sacada', 
                                     property_type: property_type,
@@ -38,7 +36,7 @@ feature 'show proposals' do
         visit root_path
         click_on 'Ver propostas'
         
-        expect(page).to have_css('h1', text: property.title)
+        expect(page).to have_css('h1', text: proposal.property.title)
         expect(page).to have_css('li', text: proposal.guest_name)
         expect(page).to have_css('li', text: proposal.email)
         expect(page).to have_css('li', text: proposal.phone)
