@@ -1,4 +1,19 @@
 
 <% @proposals.each do |p| %>
     <h1> <%= p.property.title %> </h1>
+    <ul>
+        <li> <%= p.guest_name %> </li>
+        <li> <%= p.email %> </li>
+        <li> <%= p.phone %> </li>
+        <li> <%= p.start_date %> </li>
+        <li> <%= p.end_date%> </li>
+        <li> <%= p.total_guests %> </li>
+        <li> <%= p.rent_purpose %> </li>
+        <li> <%= p.pet %> </li>
+        <li> <%= p.smoker %> </li>
+        <li> <%= p.details %> </li>
+        <li> <%= p.total_amount %> </li>
+    </ul>
+
 <% end %>
+

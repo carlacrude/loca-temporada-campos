@@ -31,11 +31,11 @@ feature 'show proposals' do
                                     pet: true,
                                     smoker: false, 
                                     details: 'Levarei um bebê de 3 meses',
-                                    property_id: property)
-        
+                                    property: property)
+
         visit root_path
         click_on 'Ver propostas'
-        
+
         expect(page).to have_css('h1', text: proposal.property.title)
         expect(page).to have_css('li', text: proposal.guest_name)
         expect(page).to have_css('li', text: proposal.email)
@@ -47,7 +47,6 @@ feature 'show proposals' do
         expect(page).to have_css('li', text: proposal.pet)
         expect(page).to have_css('li', text: proposal.smoker)
         expect(page).to have_css('li', text: proposal.details)
-        expect(page).to have_css('li', text: proposal.total_amout)
-                                
+        expect(page).to have_css('li', text: proposal.total_amount)                      
     end
 end

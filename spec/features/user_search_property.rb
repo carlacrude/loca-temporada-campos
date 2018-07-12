@@ -25,7 +25,7 @@ feature 'search property by region' do
     property = Property.create(title:'Casa para aluguel temporada', 
                                 description: 'Linda casa com vista para praia e sacada', 
                                 property_type: casa,
-                                region: casa, 
+                                region: campos, 
                                 rent_purpose: 'férias', 
                                 area: 10,
                                 room_quantity: 2, 
@@ -41,7 +41,6 @@ feature 'search property by region' do
     visit root_path
     click_on 'Buscar imóvel'
     fill_in 'Região', with: 'Amazonas'
-
 
   end
 end
