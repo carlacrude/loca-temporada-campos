@@ -3,6 +3,8 @@ Bem-vindo ao aluga temporada!
 <%= link_to 'Cadastrar Imóvel', new_property_path %>
 <%= link_to 'Ver propostas', proposals_path %>
 
-<% @regions.each do |r| %>
-    <%= link_to r.name, region%>
-<% end %>
+<ul>
+  <% @regions.each do |region| %>
+      <li><%= link_to region.name, region %></li>
+  <% end %>
+</ul>

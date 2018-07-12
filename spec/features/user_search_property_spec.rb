@@ -45,11 +45,5 @@ feature 'search property by region' do
     expect(page).to have_css('p', text: apartamento.title)
     expect(page).to have_css('p', text: apartamento.maximum_guests)
     expect(page).to have_css('h1', text: apartamento.property_type.name)
-
-    expect(page).to_not have_css("img[src*='casa.jpg']")
-    expect(page).to_not have_css('p', text: campos.name)
-    expect(page).to_not have_css('p', text: casa.title)
-    expect(page).to_not have_css('p', text: casa.maximum_guests)
-    expect(page).to_not have_css('h1', text: casa.property_type.name)
   end
 end

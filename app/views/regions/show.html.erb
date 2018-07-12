@@ -1,1 +1,10 @@
+
 <h1><%= @region.name %></h1>
+
+<% @region.properties.each do |p| %>
+  <%= image_tag p.photo.url%>
+  <h1><%= p.property_type.name %></h1>
+  <p><%= p.region.name %></p>
+  <p><%= p.title %></p>
+  <p><%= p.maximum_guests %></p> 
+<% end %> 
