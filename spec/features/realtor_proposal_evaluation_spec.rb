@@ -33,7 +33,7 @@ feature 'show proposals' do
                                     pet: true,
                                     smoker: false, 
                                     details: 'Levarei um bebê de 3 meses',
-                                    property_id_id: property)
+                                    property_id: property)
         
         visit root_path
         click_on 'Ver propostas'
