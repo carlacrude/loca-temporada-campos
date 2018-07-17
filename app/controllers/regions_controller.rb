@@ -1,5 +1,6 @@
 class RegionsController < ApplicationController
   before_action :set_region, only: [:show]
+  # before_action :authenticate_realtor!, only: [:new]
 
   def show
     @region = Region.find(params[:id])

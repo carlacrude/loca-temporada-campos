@@ -1,5 +1,6 @@
 class PropertyTypesController < ApplicationController
   before_action :set_property_type, only: [:show]
+  # before_action :authenticaterrealtot!, only: [:new]
 
   def show; end
 

@@ -1,5 +1,6 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show]
+  # before_action :authenticate_realtor!, only: [:new]
 
   def index
     @regions = Region.all()
