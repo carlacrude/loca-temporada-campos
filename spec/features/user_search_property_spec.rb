@@ -31,7 +31,7 @@ feature 'search property by region' do
                                 accessibility: true, 
                                 allow_pets: true, 
                                 allow_smokers: true, 
-                                maximum_guests: 3, 
+                                maximum_guests: 63, 
                                 minimum_rent: 1, 
                                 maximum_rent: 20,
                                 daily_rate: 500,
@@ -43,14 +43,22 @@ feature 'search property by region' do
     expect(page).to have_css("img[src*='apartamento.jpg']")
     expect(page).to have_css('p', text: amazonas.name)
     expect(page).to have_css('p', text: apartamento.title)
-    expect(page).to have_css('p', text: apartamento.maximum_guests)
+    expect(page).to have_content(apartamento.maximum_guests)
     expect(page).to have_css('h1', text: apartamento.property_type.name)
 
     expect(page).to_not have_css("img[src*='casa.jpg']")
     expect(page).to_not have_css('p', text: campos.name)
     expect(page).to_not have_css('p', text: casa.title)
-    expect(page).to_not have_css('p', text: casa.maximum_guests)
+    expect(page).to_not have_content(casa.maximum_guests)
     expect(page).to_not have_css('h1', text: casa.property_type.name)
-    expect(page).to have_ccontent("Nenhum imóvel cadastrado")
+  end
+
+  scenario do
+    region = Region.create(name: 'Brasília')
+
+    visit root_path
+    click_on 'Brasília'
+
+    expect(page).to have_content('Nenhum imóvel cadastrado')
   end
 end
