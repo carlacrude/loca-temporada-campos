@@ -24,6 +24,9 @@
         <li class="nav-item">
           <a class="nav-link"><%= current_user.email %></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link"<%= link_to('Sair', destroy_user_session_path, method: :delete)%></a>
+        </li>
       <% else %>
         <li class="nav-item">
           <a class="nav-link" href="<%= new_user_session_url %>">Login usuário</a> 
