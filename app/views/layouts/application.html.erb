@@ -11,13 +11,6 @@
 
   <body>
     <%= render partial: 'shared/nav_bar' %>
-   
-    <% if user_signed_in? %>
-      <%= current_user.email %>
-    <% else %>
-       <%= link_to 'Login usuário', new_user_session_url %>
-    <% end %>
-
     <div class="container">
       <p><%= flash[:success] %></p>
       <p><%= flash[:notice] %></p>

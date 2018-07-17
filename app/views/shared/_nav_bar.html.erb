@@ -18,5 +18,17 @@
       <li class="nav-item">
         <a class="nav-link" href="<%= new_region_path %>">Cadastrar região</a>
       </li>
+        
+      
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <a class="nav-link"><%= current_user.email %></a>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= new_user_session_url %>">Login usuário</a> 
+        </li>     
+      <% end %>
+        
   </div>
 </nav>
