@@ -1,6 +1,4 @@
-
-<% @proposals.each do |p| %>
-    <h1> <%= p.property.title %> </h1>
+    <h1> <%= p.proposal.title %> </h1>
     <ul>
         <li> Nome do locatário: <%= p.guest_name %> </li>
         <li> Email do locatário: <%= p.email %> </li>
@@ -14,6 +12,3 @@
         <li> Detalhes: <%= p.details %> </li>
         <li> Valor total: <%= p.total_amount %> </li>
     </ul>
-
-<% end %>
-
