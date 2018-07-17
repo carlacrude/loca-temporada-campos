@@ -38,14 +38,14 @@ feature 'send proposal' do
         fill_in 'Data: início locação', with: '10-10-2017'
         fill_in 'Data: término da locação', with: '15-10-2017'
         fill_in 'Quantidade de hóspedes', with: 3
-        fill_in 'Permite animais?', with: property.allow_pets
-        fill_in 'Permite fumantes?', with: property.allow_smokers
+        check 'Permite animais?'
+        check 'Permite fumantes?'
         fill_in 'Detalhes', with: 'Teste para envio de proposta'
         fill_in 'Valor total', with: '500.50'
 
         click_on 'Enviar proposta'
 
-        expect(page).to have_content('Proposta cadastrada com sucesso')
+        
         expect(page).to have_css('h1', text: 'Formulário de proposta')
         expect(page).to have_css('li', text: 'Nome do locatário: Carla')
         expect(page).to have_css('li', text: 'Email do locatário: user@user.com')
@@ -58,5 +58,6 @@ feature 'send proposal' do
         expect(page).to have_css('li', text: 'Permite fumantes? Sim')
         expect(page).to have_css('li', text: 'Detalhes: Teste para envio de proposta')
         expect(page).to have_css('li', text: 'Valor total: R$ 500.50')
+        expect(page).to have_content('Proposta cadastrada com sucesso')
     end 
 end

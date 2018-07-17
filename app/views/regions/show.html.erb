@@ -6,9 +6,9 @@
 <% @region.properties.each do |p| %>
   <%= image_tag p.photo.url%>
   <h1><%= p.property_type.name %></h1>
-  <p> Rgião: <%= p.region.name %></p>
+  <p> Região: <%= p.region.name %></p>
   <p> Título: <%= p.title %></p>
   <p> Hóspedes: <%= p.maximum_guests %></p> 
-  <%= link_to 'Fazer proposta', new_proposal_path %>
+  <%= link_to 'Fazer proposta', new_property_proposal_path(p) %>
 <% end %> 
 

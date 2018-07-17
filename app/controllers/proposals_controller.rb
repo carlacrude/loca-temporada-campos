@@ -1,26 +1,31 @@
 class ProposalsController < ApplicationController
     before_action :authenticate_user!, only: [:new, :index]
     # before_action :authenticate_realtor!, execept: [:new]
-
+  
     def index
         @proposals = Proposal.all()
     end
 
     def new
         @proposal = Proposal.new
+        @property = Property.new
     end
 
     def create
         @proposal = Proposal.new(proposal_params)
+        @proposal.property = Property.find(params[:property_id])
         if @proposal.save
-            flash[:success] = 'Proposta cadastrada com sucesso'
-            redirect_to proposal_path(params[:id])
+          flash[:notice] = 'Proposta cadastrada com sucesso'
+          redirect_to property_proposals_path(@proposal)
+        else
+          render 'new'
         end
     end
     
     def show
+      
     end
-    
+
     private
 
     def proposal_params

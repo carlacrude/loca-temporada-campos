@@ -1,14 +1,16 @@
-    <h1> <%= p.proposal.title %> </h1>
+    
+    
+    <h1>Formulário de proposta</h1>
     <ul>
-        <li> Nome do locatário: <%= p.guest_name %> </li>
-        <li> Email do locatário: <%= p.email %> </li>
-        <li> Telefone do locatário: <%= p.phone %> </li>
-        <li> Data de início da locação: <%= p.start_date %> </li>
-        <li> Data de término da locação: <%= p.end_date%> </li>
-        <li> Quantidade de hóspedes: <%= p.total_guests %> </li>
-        <li> Motivo da locação: <%= p.rent_purpose %> </li>
-        <li> Permite animais? <%= p.pet %> </li>
-        <li> Permite fumantes? <%= p.smoker %> </li>
-        <li> Detalhes: <%= p.details %> </li>
-        <li> Valor total: <%= p.total_amount %> </li>
+        <li> Nome do locatário: <%= @proposal.guest_name %> </li>
+        <li> Email do locatário: <%= @proposal.email %> </li>
+        <li> Telefone do locatário: <%= @proposal.phone %> </li>
+        <li> Data de início da locação: <%= @proposal.start_date %> </li>
+        <li> Data de término da locação: <%= @proposal.end_date%> </li>
+        <li> Quantidade de hóspedes: <%= @proposal.total_guests %> </li>
+        <li> Motivo da locação: <%= @proposal.rent_purpose %> </li>
+        <li> Permite animais? <%= @proposal.pet %> </li>
+        <li> Permite fumantes? <%= @proposal.smoker %> </li>
+        <li> Detalhes: <%= @proposal.details %> </li>
+        <li> Valor total: <%= @proposal.total_amount %> </li>
     </ul>

@@ -1,6 +1,6 @@
-<h1>Formulário de proposta</h1>
+<h1>Formulário da proposta</h1>
 
-<%= form_for(@proposal, html: { multipart: true } )  do |f| %>
+<%= form_for([@property, @proposal]) do |f| %>
     <div class="form-group">
         <%= f.label :guest_name, 'Nome do locatário' %>
         <%= f.text_field :guest_name, class: 'form-control' %>
@@ -36,14 +36,14 @@
         <%= f.text_field :total_guests, class: 'form-control' %>
     </div>
 
-    <div class="form-group">
-        <%= f.label :pet, 'Permite animais?' %>
-        <%= f.text_field :pet, class: 'form-control' %>
+    <div class="form-check">
+      <%= f.check_box :pet, class: 'form-check-input' %>
+      <%= f.label :pet, 'Permite animais?', class: 'form-check-label' %>
     </div>
 
-    <div class="form-group">
-        <%= f.label :smoker, 'Permite fumantes?' %>
-        <%= f.text_field :smoker, class: 'form-control' %>
+    <div class="form-check">
+      <%= f.check_box :smoker, class: 'form-check-input' %>
+      <%= f.label :smoker, 'Permite fumantes?', class: 'form-check-label' %>
     </div>
 
     <div class="form-group">
@@ -58,4 +58,6 @@
 
     <div class="form-group">
         <%= f.submit 'Enviar proposta', class: 'btn btn-primary' %>
-    <% end %>
+    </div>
+<% end %>
+
